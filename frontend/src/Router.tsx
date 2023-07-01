@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Start } from "./page/Start.tsx";
 import { SignUp } from "./page/SignUp";
-import { Main } from "./page/Main";
+import { MainPage } from "./page/Main";
 import { Watch } from "./page/Watch";
 import { Write } from "./page/Write";
 import { MyPage } from "./page/MyPage";
@@ -12,7 +12,7 @@ export function Router() {
       <Routes>
         <Route path="/" element={<Start />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/main" element={<Main />}>
+        <Route path="/main" element={<MainPage />}>
           <Route path="/main/:id" element={<Watch />} />
         </Route>
         <Route path="/write" element={<Write />}></Route>
