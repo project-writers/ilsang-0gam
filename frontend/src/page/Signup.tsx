@@ -1,19 +1,18 @@
 import { KeyboardEvent, useRef, useState } from 'react'
 
 export function Signup() {
-	const [res, setRes] = useState<boolean | null>(null)
-	const [stateMassage, setStateMassage] = useState('')
+	const [nameState, setNameState] = useState<{
+		res: null | boolean
+		message: string
+	}>({ res: null, message: '' })
 	const keydown = (e: KeyboardEvent) => {
 		if (e.key !== 'Enter') return
 		const value = (e.target as HTMLInputElement).value
-		// nickname vaildation fetching
-		if (value === '홍길동') {
-			setStateMassage('사용이 가능합니다')
-			setRes(true)
-		} else {
-			setStateMassage('이미 존재하는 필명입니다')
-			setRes(false)
-		}
+		// nickname validation fetching
+		if (value === '홍길동')
+			setNameState({ res: true, message: '사용이 가능합니다' })
+		else
+			setNameState({ res: false, message: '이미 존재하는 필명입니다' })
 	}
 
 	return (
@@ -28,8 +27,8 @@ export function Signup() {
 					className="h-[60px] rounded-[80px] text-center text-xl font-bold items-center bg-white border-2 border-[#BABABA]"
 					onKeyDown={keydown}
 				/>
-				<div className={`${res ? 'text-green-300' : 'text-red-300'}`}>
-					{stateMassage}
+				<div className={`${nameState.res ? 'text-green-300' : 'text-red-300'}`}>
+					{nameState.message}
 				</div>
 			</div>
 			{/* footer */}
