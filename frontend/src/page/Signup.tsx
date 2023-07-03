@@ -1,4 +1,4 @@
-import { KeyboardEvent, useRef, useState } from 'react'
+import { KeyboardEvent, useState } from 'react'
 
 export function Signup() {
 	const [nameState, setNameState] = useState<{
@@ -11,8 +11,7 @@ export function Signup() {
 		// nickname validation fetching
 		if (value === '홍길동')
 			setNameState({ res: true, message: '사용이 가능합니다' })
-		else
-			setNameState({ res: false, message: '이미 존재하는 필명입니다' })
+		else setNameState({ res: false, message: '이미 존재하는 필명입니다' })
 	}
 
 	return (
