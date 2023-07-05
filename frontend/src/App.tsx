@@ -1,7 +1,7 @@
-import { Router } from "./Router.tsx";
+import { Router } from './Router.tsx'
 
 function App() {
-  return <Router />;
+	return <Router />
 }
 
-export default App;
+export default App
