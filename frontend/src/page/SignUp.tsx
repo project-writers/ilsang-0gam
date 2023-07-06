@@ -8,6 +8,7 @@ export function SignUp() {
 	}>({ res: null, message: 'ㅤ' })
 	const ref = useRef<HTMLInputElement>(null)
 	const navigate = useNavigate()
+	// update signup
 
 	const registerNickname = async () => {
 		if (!sssssssssss.res || !ref.current) return
