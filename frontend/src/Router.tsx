@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Start } from './page/Start.tsx'
-import { SignUp } from './page/SignUp'
-import { MainPage } from './page/Main'
-import { Watch } from './page/Watch'
-import { Write } from './page/Write'
-import { MyPage } from './page/MyPage'
+import { Start } from './page/start/Start.tsx'
+import { SignUp } from './page/signup/SignUp'
+import { MainPage } from './page/main/Main'
+import { Watch } from './page/watch/Watch'
+import { Write } from './page/write/Write'
+import { MyPage } from './page/mypage/MyPage'
 
 export function Router() {
 	return (
