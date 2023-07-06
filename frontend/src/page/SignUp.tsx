@@ -2,7 +2,7 @@ import { KeyboardEvent, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export function SignUp() {
-	const [nameState, setNameState] = useState<{
+	const [nameStates, setNameState] = useState<{
 		res: null | boolean
 		message: string
 	}>({ res: null, message: 'ㅤ' })
@@ -22,7 +22,7 @@ export function SignUp() {
 		if (e.key === 'Enter') registerNickname()
 	}
 	const registerNickname = async () => {
-		if (!nameState.res || !ref.current) return
+		if (!nameStates.res || !ref.current) return
 
 		// TODO get email from jwt
 		const email = 'user@email.com'
@@ -75,12 +75,12 @@ export function SignUp() {
 				</div>
 				<div
 					className={`opacity-0 ${
-						nameState.res
+						nameStates.res
 							? 'text-green-300 opacity-100'
 							: 'text-red-300 opacity-100'
 					}`}
 				>
-					{nameState.message}
+					{nameStates.message}
 				</div>
 			</div>
 			{/* footer UI 디자인에 문제가 있음. 키보드배열이 하단 버튼화면을 가려서 사용성을 떨어뜨림. 인풋필드 오른쪽에 확인버튼 심는게 나을 듯 */}
