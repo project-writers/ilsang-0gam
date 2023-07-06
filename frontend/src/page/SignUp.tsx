@@ -8,7 +8,7 @@ export function SignUp() {
 	}>({ res: null, message: 'ㅤ' })
 	const ref = useRef<HTMLInputElement>(null)
 	const navigate = useNavigate()
-	// update signup
+	// update signu
 
 	const keydown = (e: KeyboardEvent) => {
 		if (!ref.current) return
