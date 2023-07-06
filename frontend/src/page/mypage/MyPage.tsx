@@ -1,4 +1,4 @@
-import { Header } from '@/component/Header.tsx'
+import { Header } from '@/component/Header'
 import { NavBar } from '@/component/NavBar'
 
 export function MyPage() {
