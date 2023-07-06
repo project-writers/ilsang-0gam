@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GoogleLogoSvg } from '../component/GoogleLogoSVG.tsx'
+import { GoogleLogoSvg } from 'component/GoogleLogoSVG.tsx'
 import { useNavigate } from 'react-router-dom'
 
 export function Start() {
