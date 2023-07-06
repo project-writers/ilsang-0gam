@@ -1,5 +1,5 @@
 import { Header } from '@/component/Header.tsx'
-import { NavBar } from '../component/NavBar'
+import { NavBar } from '@/component/NavBar'
 
 export function MyPage() {
 	const dummy = [
