@@ -30,8 +30,5 @@ jobs:
           path: 'node_modules'
           key: node-modules-${{ hashFiles('frontend/package.json') }}
 
-      - name: witch node
-        run: witch node
-
       - name: Install dependencies
         run: pnpm install
