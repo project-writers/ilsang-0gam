@@ -49,19 +49,7 @@ export function Start() {
 						<GoogleLogoSvg className="absolute top-1/2 translate-x-16 -translate-y-1/2" />
 					</button>
 				</footer>
-				{/* modal 필요한가? */}
-				{/* <div className="absolute top-0 left-0 w-full h-full bg-white/0 backdrop-blur-md px-[15%] py-[60%]">
-					<div className="w-full h-full bg-white rounded-3xl shadow-lg p-10">
-						회원가입 안내 모달 회원가입 안내 메시지
-						<button
-							className="relative top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-[60px] border-2 rounded-[80px] border-[#BABABA] text-center text-xl font-bold items-center "
-							onClick={navigating}
-						>
-							회원가입
-							<GoogleLogoSvg className="absolute top-1/2 translate-x-16 -translate-y-1/2" />
-						</button>
-					</div>
-				</div> */}
+
 			</div>
 		</>
 	)

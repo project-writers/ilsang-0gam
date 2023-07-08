@@ -25,9 +25,9 @@ export function SignUp() {
 		if (!nameState.res || !ref.current) return
 
 		// TODO get email from jwt
-		const email = 'user@email.com'
+		// const email = 'user@email.com'
 		// TODO registration data fetching with backend server
-		const data = { email, nickName: ref.current.value }
+		// const data = { email, nickName: ref.current.value }
 		// todo fetching url
 		// const res: {
 		// 	state: boolean
