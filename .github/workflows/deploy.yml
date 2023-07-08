@@ -27,7 +27,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v2
         with:
-          path: 'node_modules'
+          path: 'frontend/node_modules'
           key: node-modules-${{ hashFiles('frontend/package.json') }}
 
       - name: Install dependencies
