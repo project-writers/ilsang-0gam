@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Cache
-        with:
-          path: 'node_modules'
-          key: node-modules-${{ hashFiles('frontend/package.json') }}
+      # - name: Cache
+      #   with:
+      #     path: 'node_modules'
+      #     key: node-modules-${{ hashFiles('frontend/package.json') }}
 
       - name: witch node
         run: witch node
