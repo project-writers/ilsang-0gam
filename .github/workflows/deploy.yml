@@ -22,7 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-        working-directory: frontend/
 
       - name: Install dependencies
         working-directory: frontend/
