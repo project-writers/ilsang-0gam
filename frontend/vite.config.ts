@@ -19,6 +19,7 @@ export default defineConfig({
 	},
 	build: {
 		// 깃헙 페이지 전용
+		assetsDir: './ilsang-0gam/assets',
 		outDir: './dist/docs',
 	},
 })
