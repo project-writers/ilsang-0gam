@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.16.1]
+    working_directory: frontend/
     steps:
       - uses: actions/checkout@v3
 
