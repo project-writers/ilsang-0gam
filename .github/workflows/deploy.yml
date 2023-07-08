@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-          cache-dependency-path: '/home/runner/work/ilsang-0gam//frontend/pnpm-lock.json'
+          cache-dependency-path: '/home/runner/work/ilsang-0gam/frontend/pnpm-lock.json'
 
       - name: witch node
         run: witch node
