@@ -23,8 +23,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          # cache: 'pnpm'
-          # cache-dependency-path: frontend/pnpm-lock.json
+          cache: 'pnpm'
+          cache-dependency-path: '**/pnpm-lock.json'
+
+      - name: witch node
+        run: witch node
 
       - name: Install dependencies
         run: pnpm install
