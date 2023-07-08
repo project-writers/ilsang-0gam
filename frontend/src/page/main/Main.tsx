@@ -1,8 +1,40 @@
 export function MainPage() {
+  const card_dummy_list = [
+    {
+      title: 'lack',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      penname: 'Summers',
+    },
+    {
+      title: 'bend',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      penname: 'Jensen',
+    },
+    {
+      title: 'current',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      penname: 'Pierce',
+    },
+    {
+      title: 'trunk',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      penname: 'Cunningham',
+    },
+    {
+      title: 'same',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      penname: 'Springs',
+    },
+  ]
   return (
     <div className="w-full h-full relative bg-[#F7F7F7]">
       <div className="pt-9 pl-6">로고영역</div>
-      <div className="w-full pt-9 pl-6 flex flex-col">
+      <div className="w-full pt-9 px-6 flex flex-col">
         <div className="font-bold text-2xl">일상공감</div>
         <div className="mt-3 flex items-center relative">
           <input
@@ -23,82 +55,30 @@ export function MainPage() {
             />
           </svg>
         </div>
-        <div className="mt-4 flex justify-between">
-          <button className="px-4 py-2 border rounded-[900px] bg-white">
+        <div className="mt-4 overflow-auto whitespace-nowrap scrollbar-hide">
+          <button className="mr-2 px-4 py-2 border rounded-full bg-[#FFCE52]">
             #자전거
           </button>
-          <button className="px-4 py-2 border rounded-[900px]">#밤</button>
-          <button className="px-4 py-2 border rounded-[900px]">#글귀</button>
-          <button className="px-4 py-2 border rounded-[900px]">#회사</button>
-          <button className="px-4 py-2 border rounded-[900px]">#개발</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#밤</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#글귀</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#회사</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#개발</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#곰발</button>
+          <button className="mr-2 px-4 py-2 border rounded-full">#새발</button>
         </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
+        {card_dummy_list.map((data) => (
+          <div
+            key={data.penname}
+            className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
+          >
+            <div className="font-bold text-base">{data.title}</div>
+            <div className="mt-4 text-xs line-clamp-5">{data.content}</div>
+            <div className="mt-2 text-xs text-right">{data.penname}님의 글</div>
           </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
-          </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
-          </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
-          </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
-          </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
-        <div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
-          <div className="font-bold text-base">아침에 눈을 뜨고</div>
-          <div className="mt-4 text-xs">
-            아침에 눈을 뜨고, 씻고, 옷을 입고, 출근한다. 퇴근하고, 저녁을 먹고,
-            씻고, 잠을 잔다. 매일 반복되는 일상. 특별한 일은 없지만, 그저 그런
-            하루도 소중하다. 일상에서 느끼는 소소한 행복들. 가족과 함께하는
-            시간, 친구와의 대화, 좋아하는 일을 하는 시간. 이런 것들이 일상을
-            지루하지 않게 만들어준다.
-          </div>
-          <div className="mt-2 text-xs text-right">머리 감는 무지님의 글</div>
-        </div>
+        ))}
       </div>
+
+      {/* footer */}
       <div className="w-full h-16 mt-7 fixed bottom-0 z-50 flex justify-around items-center bg-white">
         <svg
           className="w-8 h-8"
@@ -141,5 +121,5 @@ export function MainPage() {
         </svg>
       </div>
     </div>
-  );
+  )
 }
