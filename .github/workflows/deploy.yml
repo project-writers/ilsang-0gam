@@ -17,14 +17,18 @@ jobs:
         with:
           version: 8
 
+      - name: go frontend folder
+        run: cd frontend/
+
       - name: read files
         run: ls
+
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v3
       #   with:
       #     node-version: ${{ matrix.node-version }}
       #     cache: 'pnpm'
 
-      # - name: Install dependencies
-      #   working-directory: frontend/
-      #   run: pnpm install
+      - name: Install dependencies
+        working-directory: frontend/
+        run: pnpm install
