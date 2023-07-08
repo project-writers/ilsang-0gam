@@ -23,4 +23,5 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
+        run: cd frontend/
         run: pnpm install
