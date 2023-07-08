@@ -6,19 +6,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     strategy:
       matrix:
         node-version: [18.16.1]
-
     steps:
       - uses: actions/checkout@v3
 
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-
-      - name: go frontend folder
-        run: cd frontend/
 
       - name: read files
         run: ls
