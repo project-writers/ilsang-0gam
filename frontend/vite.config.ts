@@ -17,10 +17,4 @@ export default defineConfig({
 			},
 		],
 	},
-	build: {
-		// 깃헙 페이지 전용
-
-		assetsDir: './',
-		outDir: './dist',
-	},
 })
