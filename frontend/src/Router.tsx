@@ -8,7 +8,7 @@ import { MyPage } from './page/mypage/MyPage'
 
 export function Router() {
 	return (
-		<HashRouter>
+		<HashRouter basename='/ilsang-0gam'>
 			<Routes>
 				<Route path="/" element={<Start />}></Route>
 				<Route path="/signup" element={<SignUp />}></Route>
