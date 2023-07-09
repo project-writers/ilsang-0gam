@@ -8,7 +8,7 @@ import { MyPage } from './page/mypage/MyPage'
 import { useState } from 'react'
 
 export function Router() {
-	const [publish, setPublish] = useState('github')
+	const publish = useState('github')[0]
 	const prefix = publish === 'github' ? '/ilsang-0gam' : ''
 
 	return (
