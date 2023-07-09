@@ -5,18 +5,22 @@ import { MainPage } from './page/main/Main'
 import { Watch } from './page/watch/Watch'
 import { Write } from './page/write/Write'
 import { MyPage } from './page/mypage/MyPage'
+import { useState } from 'react'
 
 export function Router() {
+	const [publish, setPublish] = useState('github')
+	const prefix = publish === 'github' ? '/ilsang-0gam' : ''
+
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Start />}></Route>
-				<Route path="/signup" element={<SignUp />}></Route>
-				<Route path="/main" element={<MainPage />}>
-					<Route path="/main/:id" element={<Watch />} />
+				<Route path={`${prefix}/`} element={<Start />}></Route>
+				<Route path={`${prefix}/signup`} element={<SignUp />}></Route>
+				<Route path={`${prefix}/main`} element={<MainPage />}>
+					<Route path={`${prefix}/main/:id`} element={<Watch />} />
 				</Route>
-				<Route path="/write" element={<Write />}></Route>
-				<Route path="/mypage" element={<MyPage />}></Route>
+				<Route path={`${prefix}/write`} element={<Write />}></Route>
+				<Route path={`${prefix}/mypage`} element={<MyPage />}></Route>
 			</Routes>
 		</BrowserRouter>
 	)
