@@ -74,7 +74,7 @@ export function MyPage() {
 	return (
 		<div className="w-screen h-screen relative overflow-hidden">
 			<Header name={'나는어피치'} />
-			<section className="translate-y-[90px] w-full h-full px-6 overflow-y-scroll disable-scrollbar">
+			<section className="translate-y-[90px] w-full h-full px-6 overflow-y-scroll scrollbar-hide">
 				{dummy.map((o) => {
 					return (
 						<div className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white">
