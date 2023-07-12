@@ -8,7 +8,8 @@ import { MyPage } from './page/mypage/MyPage'
 
 export function Router() {
     return (
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        // <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Start />}></Route>
                 <Route path="/signup" element={<SignUp />}></Route>

@@ -4,17 +4,18 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react()],
-	resolve: {
-		alias: [
-			{
-				find: '@component',
-				replacement: path.resolve(__dirname, 'src/component'),
-			},
-			{
-				find: '@',
-				replacement: path.resolve(__dirname, 'src'),
-			},
-		],
-	},
+    plugins: [react()],
+    base: '/ilsang-0gam/',
+    resolve: {
+        alias: [
+            {
+                find: '@component',
+                replacement: path.resolve(__dirname, 'src/component'),
+            },
+            {
+                find: '@',
+                replacement: path.resolve(__dirname, 'src'),
+            },
+        ],
+    },
 })
