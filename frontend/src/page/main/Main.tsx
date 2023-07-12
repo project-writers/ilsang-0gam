@@ -1,6 +1,7 @@
 import { NavBar } from '@/component/NavBar'
-import React, { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Tag } from '@/component/Tag'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 export function MainPage() {
   const card_dummy_list = [
@@ -36,55 +37,35 @@ export function MainPage() {
     },
   ]
 
-  const containerRef = useRef<HTMLDivElement>(null)
+  interface IForm {
+    keyword: string
+  }
 
-  // const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-  //   const container = containerRef.current
-  //   if (container) {
-  //     container.scrollTo({
-  //       left: container.scrollLeft - event.deltaY * 0.5,
-  //       behavior: 'instant',
-  //     })
-  //   }
-  //   event.preventDefault()
-  // }
-
-  useEffect(() => {
-    const container = containerRef.current
-
-    const handleWheel = (event: WheelEvent) => {
-      if (container) {
-        container.scrollTo({
-          left: container.scrollLeft - event.deltaY * 0.5,
-          behavior: 'instant',
-        })
-      }
-      event.preventDefault()
-    }
-
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false })
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel)
-      }
-    }
-  }, [])
+  const navigate = useNavigate()
+  const { register, handleSubmit, setFocus } = useForm<IForm>()
+  const onValid = (data: IForm) => {
+    navigate(`/watch?keyword=${data.keyword}`)
+  }
 
   return (
     <div className="w-full h-full relative bg-[#F7F7F7]">
-      <div className="pt-9 pl-6">로고영역</div>
+      <div className="pt-9 pl-6">{'로고영역'}</div>
       <div className="w-full pt-9 px-6 flex flex-col">
-        <div className="font-bold text-2xl">일상공감</div>
-        <div className="mt-3 flex items-center relative">
+        <div className="font-bold text-2xl">{'일상공감'}</div>
+        <form
+          className="mt-3 flex items-center relative"
+          onSubmit={handleSubmit(onValid)}
+        >
           <input
+            {...register('keyword')}
             className="w-full pl-5 py-1 border rounded-[20px] border-[#D9D9D9]"
             placeholder="검색"
           />
           <svg
             className="absolute right-5"
+            onClick={() => {
+              setFocus('keyword')
+            }}
             width="20"
             height="20"
             viewBox="0 0 20 20"
@@ -96,33 +77,20 @@ export function MainPage() {
               fill="#D0D0D0"
             />
           </svg>
-        </div>
-        <div
-          ref={containerRef}
-          className="mt-4 overflow-auto whitespace-nowrap scrollbar-hide"
-          // onWheel={handleWheel}
-        >
-          <button className="mr-2 px-4 py-2 border rounded-full bg-[#FFCE52]">
-            #자전거
-          </button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#밤</button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#글귀</button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#회사</button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#개발</button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#곰발</button>
-          <button className="mr-2 px-4 py-2 border rounded-full">#새발</button>
-        </div>
+        </form>
+        <Tag />
         {card_dummy_list.map((data) => (
-          <div
+          <Link
+            to={'/watch'}
             key={data.penname}
             className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
           >
             <div className="font-bold text-base">{data.title}</div>
             <div className="mt-4 text-xs line-clamp-5">{data.content}</div>
-            <Link to={'/mypage'} className="absolute mt-2 right-5 text-xs">
+            <Link to={'/mypage'} className="absolute mt-1 right-5 text-xs">
               {data.penname}님의 글
             </Link>
-          </div>
+          </Link>
         ))}
       </div>
 
