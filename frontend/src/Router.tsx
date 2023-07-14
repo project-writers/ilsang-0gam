@@ -8,6 +8,7 @@ import { MyPage } from './page/mypage/MyPage'
 import { BASE_URL } from './constant.ts'
 
 export function Router() {
+	console.log(BASE_URL)
 	return (
 		<BrowserRouter basename={BASE_URL}>
 			<Routes>
