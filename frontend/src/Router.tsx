@@ -8,8 +8,8 @@ import { MyPage } from './page/mypage/MyPage'
 import { BASE_URL } from './constant.ts'
 
 export function Router() {
-	console.log(BASE_URL)
 	return (
+		// 라우터에서 베이스네임을 선언하면 네비게이션에서 베이스를 따로 추가할 필요가 없음
 		<BrowserRouter basename={BASE_URL}>
 			<Routes>
 				<Route path="/" element={<Start />}></Route>
