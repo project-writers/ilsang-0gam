@@ -1,20 +1,19 @@
 import { Header } from '@/component/Header'
-import { NavBar } from '@/component/NavBar'
 import { useLocation } from 'react-router-dom'
 import { Footer } from './Footer.tsx'
 
-function findContainer(el: HTMLElement) {
-	if (el.classList.contains('btn')) return el
-	else return findContainer(el.parentElement as HTMLElement)
-}
+// function findContainer(el: HTMLElement) {
+// 	if (el.classList.contains('btn')) return el
+// 	else return findContainer(el.parentElement as HTMLElement)
+// }
 
-const goto = (e: MouseEvent) => {
-	const target = e.target as HTMLElement
-	if (target.classList.contains('nav')) return
-	const btn = findContainer(target)
-	const toUrl = btn.getAttribute('data-href')
-	console.log(toUrl)
-}
+// const goto = (e: MouseEvent) => {
+// 	const target = e.target as HTMLElement
+// 	if (target.classList.contains('nav')) return
+// 	const btn = findContainer(target)
+// 	const toUrl = btn.getAttribute('data-href')
+// 	console.log(toUrl)
+// }
 
 export function MyPage() {
 	const userId = useLocation().pathname.replace('/mypage/', '')
