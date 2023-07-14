@@ -5,19 +5,19 @@ import { MainPage } from './page/main/Main'
 import { Watch } from './page/watch/Watch'
 import { Write } from './page/write/Write'
 import { MyPage } from './page/mypage/MyPage'
+import { BASE_URL } from './constant.ts'
 
 export function Router() {
-    return (
-        // <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/ilsang-0gam" element={<Start />}></Route>
-                <Route path="/ilsang-0gam/signup" element={<SignUp />}></Route>
-                <Route path="/ilsang-0gam/main" element={<MainPage />}></Route>
-                <Route path="/ilsang-0gam/watch/:id" element={<Watch />} />
-                <Route path="/ilsang-0gam/write" element={<Write />}></Route>
-                <Route path="/ilsang-0gam/mypage" element={<MyPage />}></Route>
-            </Routes>
-        </BrowserRouter>
-    )
+	return (
+		<BrowserRouter basename={BASE_URL}>
+			<Routes>
+				<Route path="/" element={<Start />}></Route>
+				<Route path="/signup" element={<SignUp />}></Route>
+				<Route path="/main" element={<MainPage />}></Route>
+				<Route path="/watch/:id" element={<Watch />} />
+				<Route path="/write" element={<Write />}></Route>
+				<Route path="/mypage" element={<MyPage />}></Route>
+			</Routes>
+		</BrowserRouter>
+	)
 }

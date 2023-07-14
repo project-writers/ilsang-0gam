@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { GoogleLogoSvg } from '@component/GoogleLogoSVG.tsx'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from '@/constant.ts'
 
 export function Start() {
 	// const [jwtState, setJwtState] = useState(false)
@@ -24,14 +25,14 @@ export function Start() {
 		const res = await jwtAuth()
 		if (res.state) {
 			// TODO 로그인 정보 브라우저 등록 함수 작성
-			navigate('/main')
-		} else navigate('/signup')
+			navigate(BASE_URL + '/main')
+		} else navigate(BASE_URL + '/signup')
 	}
 
 	useEffect(() => {
 		// check token
 		const signIn = false
-		if (signIn) navigate('/main')
+		if (signIn) navigate(BASE_URL+ '/main')
 	}, [])
 
 	return (
@@ -49,7 +50,6 @@ export function Start() {
 						<GoogleLogoSvg className="absolute top-1/2 translate-x-16 -translate-y-1/2" />
 					</button>
 				</footer>
-
 			</div>
 		</>
 	)
