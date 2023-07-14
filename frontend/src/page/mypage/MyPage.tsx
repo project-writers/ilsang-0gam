@@ -1,5 +1,5 @@
 import { Header } from '@/component/Header'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Footer } from './Footer.tsx'
 
 // function findContainer(el: HTMLElement) {
@@ -17,6 +17,7 @@ import { Footer } from './Footer.tsx'
 
 const getNickName = (id: string) => {
 	// fetching(id):nickname
+	console.log(id);
 	return '테스트-유져'
 }
 
