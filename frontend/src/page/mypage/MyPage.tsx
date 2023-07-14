@@ -15,28 +15,44 @@ import { Footer } from './Footer.tsx'
 // 	console.log(toUrl)
 // }
 
+const getNickName = (id: string) => {
+	// fetching(id):nickname
+	console.log(id);
+	return '테스트-유져'
+}
+
+// const sliceLine = (str: string) => {
+// 	const line = str.split('\n')
+// 	console.log(line.length)
+// }
+
 export function MyPage() {
 	const userId = useLocation().pathname.replace('/mypage/', '')
+	const userNickName = getNickName(userId)
 
 	return (
-		<div className="w-screen h-screen relative overflow-hidden">
-			<Header name={userId} />
-			<section className="translate-y-[90px] w-full h-full px-6 overflow-y-scroll scrollbar-hide">
+		<div className="w-screen h-screen relative overflow-hidden bg-zinc-100">
+			<Header name={userNickName} />
+			<section className="translate-y-12 w-full h-full px-6 overflow-y-scroll scrollbar-hide">
 				{dummy.map((o, i) => {
 					return (
 						<div
 							key={o.title + i}
-							className="mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
+							className="mt-4 px-5 pt-3 pb-5 w-full h-fit border rounded-[20px] bg-white "
 						>
-							<div className="flex font-bold text-base justify-between">
-								<div className="">{o.title}</div>
-								<div className="">작성일 {o.date}</div>
+							<div className="w-full max-h-[80vh] flex flex-col gap-1 overflow-hidden">
+								<div className="flex font-bold text-base justify-between ">
+									<div className="">{o.title}</div>
+									<div className="">작성일 {o.date}</div>
+								</div>
+								<div className="h-full text-xs overflow-hidden ">
+									{o.content}
+								</div>
 							</div>
-							<div className="mt-4 text-xs">{o.content}</div>
 						</div>
 					)
 				})}
-				<div className="w-full h-[180px] " />
+				<div className="w-full h-[280px] " />
 			</section>
 			<Footer />
 		</div>
@@ -47,7 +63,166 @@ const dummy = [
 	{
 		title: 'wrote',
 		date: '8/1/2122',
-		content: 'eaYbVeHsXREnonRLgkCQ',
+		content: `eaYbVeHsXREnonRLgkCQ Lorem lasdsad
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		a;sdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdsad asdasdasdasd asd asd sad asd lasdaskd jkas jk sa
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		asdasdnasldnkasdnlasndnlasdnlnasdnasndnsad a nskl nklas klalsdn
+		asdkajsd ba jks djaksd asjkjkasbd kkas dbkb k
+		`,
 		tag: '',
 	},
 	{
@@ -105,7 +280,7 @@ const dummy = [
 		tag: '',
 	},
 	{
-		title: 'especially',
+		title: 'end post',
 		date: '4/20/2117',
 		content: 'KkvYGPvYgupq',
 		tag: '',
