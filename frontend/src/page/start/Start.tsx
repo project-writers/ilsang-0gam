@@ -49,7 +49,6 @@ export function Start() {
 						<GoogleLogoSvg className="absolute top-1/2 translate-x-16 -translate-y-1/2" />
 					</button>
 				</footer>
-
 			</div>
 		</>
 	)
