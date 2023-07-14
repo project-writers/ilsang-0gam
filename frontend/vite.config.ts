@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import 'dotenv/config'
 
-const base = process?.env?.BASE_ENV === 'PRODUCTION' ? '/' : '/ilsang-0gam'
+const base = process?.env?.BASE_ENV === 'PRODUCTION' ? '/' : '/ilsang-0gam/'
 // const base = '/ilsang-0gam/'
 
 export default defineConfig({
