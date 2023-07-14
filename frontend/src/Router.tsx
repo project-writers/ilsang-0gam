@@ -17,7 +17,7 @@ export function Router() {
 				<Route path="/main" element={<MainPage />}></Route>
 				<Route path="/watch/:id" element={<Watch />} />
 				<Route path="/write" element={<Write />}></Route>
-				<Route path="/mypage" element={<MyPage />}></Route>
+				<Route path="/mypage/:id" element={<MyPage />}></Route>
 			</Routes>
 		</BrowserRouter>
 	)
