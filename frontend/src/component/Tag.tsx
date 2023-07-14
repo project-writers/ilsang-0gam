@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export function Tag() {
+export function Tag({ className }: { className: string }) {
     const containerRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         const container = containerRef.current
