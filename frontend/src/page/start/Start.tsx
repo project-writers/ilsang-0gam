@@ -68,7 +68,7 @@ function GoogleJWTBtn() {
         data-client_id="902167606195-6bgoqc612htvos2keu48bjt9agfi6aib.apps.googleusercontent.com"
         data-context="use"
         data-ux_mode="redirect"
-        data-login_uri="http://localhost:5173/"
+        data-login_uri="https://project-writers.github.io/ilsang-0gam/signup"
         data-auto_select="true"
         data-itp_support="true">
       </div>
