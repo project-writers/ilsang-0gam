@@ -78,7 +78,7 @@ export function MainPage() {
                         />
                     </svg>
                 </form>
-                <Tag className="" />
+                <Tag bgColor="#FFCE52" />
                 {card_dummy_list.map((data) => (
                     <Link
                         to={'/watch'}

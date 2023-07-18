@@ -9,7 +9,7 @@ export function Watch() {
             <div className="translate-y-[90px] w-full px-6">
                 <>
                     <div className="font-bold text-2xl">lack</div>
-                    <div className="mt-4 text-base line-clamp-5">
+                    <div className="mt-4 text-base">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -22,8 +22,8 @@ export function Watch() {
                     </div>
                 </>
             </div>
-            <div className="translate-y-[90px]">
-                <Tag className="translate-y-[90px]" />
+            <div className="translate-y-[90px] px-6">
+                <Tag bgColor="" />
             </div>
             <NavBar />
         </div>
