@@ -13,7 +13,7 @@ export function NavBar() {
 			<Link to="/main">
 				<MainPageBtnSVG />
 			</Link>
-			<Link to="write">
+			<Link to="/write">
 				<WriteBtnSVG />
 			</Link>
 		</div>
