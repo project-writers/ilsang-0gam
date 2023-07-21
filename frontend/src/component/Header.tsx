@@ -1,19 +1,31 @@
 import { Link } from 'react-router-dom'
 
-export function Header({ name }: { name: string }) {
+export function Header({ name, option }: { 
+  name: string, 
+  option: string
+}) {
 	return (
 		<header className="fixed top-0 left-0 z-20 w-full h-[48px] text-center items-center bg-zinc-100">
-			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-lg select-none">
-				{name}
-			</div>
 			<Link
 				to={'/main'}
 				className="absolute top-1/2 left-[18px]  -translate-y-1/2"
 			>
 				<BackLinkArrowSVG />
 			</Link>
+			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-lg select-none">
+				{name}
+			</div>
+      {option === "edit" ? editBtn() : ''}
 		</header>
 	)
+}
+
+function editBtn() {
+  return (
+    <div className='absolute top-1/2 right-[18px] -translate-y-1/2'>
+      Btn
+    </div>
+  )
 }
 
 function BackLinkArrowSVG() {

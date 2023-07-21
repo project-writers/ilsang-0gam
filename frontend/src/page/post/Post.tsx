@@ -53,7 +53,7 @@ export function Post() {
   return (
     <>
       <div className="w-screen h-screen bg-zinc-100 flex flex-col">
-        <Header name={'user'} />
+        <Header name={'user'} option='edit'/>
         <div className='w-full h-[48px] flex-none'>header space</div>
         <input value={doc.title} onChange={inputChange} type='text' placeholder='title' className='flex-none w-full font-bold text-4xl px-10 outline-none leading-3' />
         <div className='flex gap-1 flex-wrap text-zinc-400 flex-none'>
