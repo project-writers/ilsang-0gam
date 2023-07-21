@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.multi.user.UserVO;
-import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
-
 @Controller
 public class IlsangController {
 
