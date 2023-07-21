@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	
+	<insert id="insert" parameterType="userVO">
+		insert into user values (#{user_email}, #{user_penname}, now(), #{user_jwt})
+	</insert>
+	
+	<delete id="del"  parameterType="userVO">
+		delete from user where id = #{user_penname}
+	</delete>
+	
+	<update id="up"  parameterType="userVO">
+		update user set user_penname = #{user_penname} where user_email = #{user_email}
+	</update>
+	
+	<select id="one"  parameterType="String" resultType="userVO">
+		select  *  from user 
+		where user_penname = #{user_penname}
+	</select>
+	
+	<select id="list" resultType="userVO">
+		select * from user
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
