@@ -2,38 +2,49 @@ import { NavBar } from '@/component/NavBar'
 import { Tag } from '@/component/Tag'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 export function MainPage() {
     const card_dummy_list = [
         {
+            ilsang_no: 31,
             title: 'lack',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             penname: 'Summers',
+            tag: '자전거',
         },
         {
+            ilsang_no: 98,
             title: 'bend',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             penname: 'Jensen',
+            tag: '밤',
         },
         {
+            ilsang_no: 58,
             title: 'current',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             penname: 'Pierce',
+            tag: '글귀',
         },
         {
+            ilsang_no: 49,
             title: 'trunk',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             penname: 'Cunningham',
+            tag: '회사',
         },
         {
+            ilsang_no: 26,
             title: 'same',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             penname: 'Springs',
+            tag: '개발',
         },
     ]
 
@@ -41,14 +52,35 @@ export function MainPage() {
         keyword: string
     }
 
+    const [dummyList, setDummyList] = useState(card_dummy_list)
+
     const navigate = useNavigate()
     const { register, handleSubmit, setFocus } = useForm<IForm>()
     const onValid = (data: IForm) => {
-        navigate(`/watch?keyword=${data.keyword}`)
+        navigate(`/main?keyword=${data.keyword}`)
+
+        // 검색조건
+        const keyword = data.keyword.slice(1)
+        const searchedTag = card_dummy_list.filter((item) =>
+            item.tag.includes(keyword)
+        )
+        const searchedPenname = card_dummy_list.filter((item) =>
+            item.penname.includes(keyword)
+        )
+        const searchedTitle = card_dummy_list.filter((item) =>
+            item.title.includes(keyword)
+        )
+        if (data.keyword.startsWith('#')) {
+            setDummyList(searchedTag)
+        } else if (data.keyword.startsWith('@')) {
+            setDummyList(searchedPenname)
+        } else {
+            setDummyList(searchedTitle)
+        }
     }
 
     return (
-        <div className="w-full h-full relative bg-[#F7F7F7]">
+        <div className="w-screen h-screen relative bg-[#F7F7F7]">
             <div className="pt-9 pl-6">{'로고영역'}</div>
             <div className="w-full pt-9 px-6 flex flex-col">
                 <div className="font-bold text-2xl">{'일상공감'}</div>
@@ -58,6 +90,7 @@ export function MainPage() {
                 >
                     <input
                         {...register('keyword')}
+                        type="text"
                         className="w-full pl-5 py-1 border rounded-[20px] border-[#D9D9D9]"
                         placeholder="검색"
                     />
@@ -79,9 +112,9 @@ export function MainPage() {
                     </svg>
                 </form>
                 <Tag bgColor="#FFCE52" />
-                {card_dummy_list.map((data) => (
+                {dummyList.map((data) => (
                     <Link
-                        to={'/watch'}
+                        to={`/watch/${data.ilsang_no}`}
                         key={data.penname}
                         className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
                     >
@@ -90,7 +123,7 @@ export function MainPage() {
                             {data.content}
                         </div>
                         <Link
-                            to={'/mypage'}
+                            to={`/mypage/${data.penname}`}
                             className="absolute mt-1 right-5 text-xs"
                         >
                             {data.penname}님의 글
