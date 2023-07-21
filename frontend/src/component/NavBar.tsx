@@ -13,7 +13,7 @@ export function NavBar() {
             <Link to="/main">
                 <MainPageBtnSVG />
             </Link>
-            <Link to="/write">
+            <Link to="/post/newpost">
                 <WriteBtnSVG />
             </Link>
         </div>
@@ -55,7 +55,7 @@ function MainPageBtnSVG() {
     )
 }
 function WriteBtnSVG() {
-    const writepageMatch = useMatch('/write')
+    const writepageMatch = useMatch('/post/:id')
     return (
         <svg
             className="w-8 h-8"

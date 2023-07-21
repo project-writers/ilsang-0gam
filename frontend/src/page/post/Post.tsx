@@ -5,8 +5,14 @@ import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
 import TextStyle from '@tiptap/extension-text-style'
+import { useState } from 'react'
 
-export function Write() {
+export function Post() {
+  const [title, setTitle] = useState('')
+
+  // fetch to backend post, return document
+  setTitle("title")
+  const content = 'hello world'
   // const textStyleConfig = { types: [ListItem.name] }
   const editor = useEditor({
     editorProps: {
@@ -20,22 +26,22 @@ export function Write() {
       StarterKit.configure({
         bulletList: {
           keepMarks: true,
-          keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+          keepAttributes: false, 
         },
         orderedList: {
           keepMarks: true,
-          keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+          keepAttributes: false, 
         },
       }),
     ],
-    content: 'hello world'
+    content
   })
   return (
     <>
       <div className="w-screen h-screen bg-zinc-100 flex flex-col">
         <Header name={'user'} />
         <div className='w-full h-[48px] flex-none'>header space</div>
-        <input type='text' placeholder='title' className='flex-none w-full font-bold text-4xl px-10 outline-none leading-3' />
+        <input value={title} type='text' placeholder='title' className='flex-none w-full font-bold text-4xl px-10 outline-none leading-3' />
         <div className='flex gap-1 flex-wrap text-zinc-400 flex-none'>
           <MenuBar editor={editor} />
         </div>

@@ -1,5 +1,5 @@
 import { Header } from '@/component/Header'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { Footer } from './Footer.tsx'
 
 // function findContainer(el: HTMLElement) {
@@ -27,6 +27,8 @@ const getNickName = (id: string) => {
 // }
 
 export function MyPage() {
+  const userId2 = useParams()
+  console.log(userId2)
 	const userId = useLocation().pathname.replace('/mypage/', '')
 	const userNickName = getNickName(userId)
 
