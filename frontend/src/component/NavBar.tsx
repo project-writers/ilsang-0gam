@@ -22,8 +22,6 @@ export function NavBar() {
 
 function MyPageBtnSVG() {
     const mypageMatch = useMatch('/mypage/:id')
-    console.log(Boolean(mypageMatch))
-
     return (
         <svg
             className="w-8 h-8"
