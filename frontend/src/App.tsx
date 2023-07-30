@@ -1,7 +1,13 @@
 import { Router } from './Router.tsx'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 function App() {
-	return <Router />
+    return (
+        <>
+            <Router />
+            <ReactQueryDevtools />
+        </>
+    )
 }
 
 export default App
