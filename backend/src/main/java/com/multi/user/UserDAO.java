@@ -12,19 +12,18 @@ public class UserDAO {
 	@Autowired
 	SqlSessionTemplate my;
 	
-	public int insert(UserVO bag) {
-		
-		int result = my.insert("member.create", bag);
-		return result;
+	public void insert(UserVO bag) {
+		System.out.println("insertUser : " + bag);
+		my.insert("user.insert", bag);
 	}
 
 	public int update(UserVO bag) {
-		int result = my.update("member.up", bag);
+		int result = my.update("user.up", bag);
 		return result;
 	}
 
 	public int delete(String user_penname) {
-		int result = my.delete("member.del", user_penname);
+		int result = my.delete("user.del", user_penname);
 		return result;
 	}
 
@@ -34,7 +33,7 @@ public class UserDAO {
 	}
 	
 	public List<UserVO> list() {
-		List<UserVO> list = my.selectList("member.list");
+		List<UserVO> list = my.selectList("user.list");
 		return list;
 	}
 }

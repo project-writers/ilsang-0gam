@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller //ìŠ¤í”„ë§ì—ì„œ ì œì–´í•˜ëŠ” ì—­í™œë¡œ ë“±ë¡
-public class UserController {
+@Controller //?Š¤?”„ë§ì—?„œ ? œ?–´?•˜?Š” ?—­?™œë¡? ?“±ë¡?
+public class UserController1 {
 	
 	@Autowired
 	UserDAO dao;
@@ -20,7 +20,7 @@ public class UserController {
 	@RequestMapping("user/insert")
 	public void insert(UserVO bag) {
 		
-		System.out.println("insert ìš”ì²­ë¨.");
+		System.out.println("insert ?š”ì²??¨.");
 		System.out.println(bag);
 		System.out.println(dao);
 		dao.insert(bag);
@@ -29,19 +29,19 @@ public class UserController {
 	
 	@RequestMapping("update")
 	public void update(UserVO bag) {
-		System.out.println("insert ìš”ì²­ë¨.");
+		System.out.println("insert ?š”ì²??¨.");
 		dao.update(bag);
 	}
 	
 	@RequestMapping("delete")
 	public void delte(String user_penname) {
-		System.out.println("insert ìš”ì²­ë¨.");
+		System.out.println("insert ?š”ì²??¨.");
 		dao.delete(user_penname);
 	}
 	
 	@RequestMapping("one")
 	public void one(String user_penname, Model model) {
-		System.out.println("insert ìš”ì²­ë¨.");
+		System.out.println("insert ?š”ì²??¨.");
 		UserVO bag = dao.one(user_penname);
 		model.addAttribute("bag", bag);
 	}

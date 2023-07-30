@@ -5,9 +5,10 @@
 	<insert id="insert" parameterType="userVO">
 		insert into user values (#{user_email}, #{user_penname}, now(), #{user_jwt})
 	</insert>
+
 	
 	<delete id="del"  parameterType="userVO">
-		delete from user where id = #{user_penname}
+		delete from user where user_penname = #{user_penname}
 	</delete>
 	
 	<update id="up"  parameterType="userVO">
