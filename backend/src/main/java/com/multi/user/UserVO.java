@@ -8,7 +8,17 @@ public class UserVO {
 	private String user_penname;
 	private Timestamp user_joindate;
 	private String user_jwt;
+	private int user_no;
+
 	
+	
+	
+	public int getUser_no() {
+		return user_no;
+	}
+	public void setUser_no(int user_no) {
+		this.user_no = user_no;
+	}
 	public String getUser_email() {
 		return user_email;
 	}
@@ -39,8 +49,9 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [user_email=" + user_email + ", user_penname=" + user_penname + ", user_joindate="
-				+ user_joindate + ", user_jwt=" + user_jwt + "]";
+				+ user_joindate + ", user_jwt=" + user_jwt + ", user_no=" + user_no + "]";
 	}
+	
 	
 	
 }

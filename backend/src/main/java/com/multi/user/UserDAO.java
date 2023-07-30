@@ -28,7 +28,7 @@ public class UserDAO {
 	}
 
 	public UserVO one(String user_penname) {
-		UserVO bag = my.selectOne("member.one", user_penname);
+		UserVO bag = my.selectOne("user.one", user_penname);
 		return bag;
 	}
 	

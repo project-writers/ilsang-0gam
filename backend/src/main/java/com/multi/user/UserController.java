@@ -3,31 +3,29 @@ package com.multi.user;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import lombok.AllArgsConstructor;
-
 @Controller
-@RequestMapping("/User/*")
-@AllArgsConstructor
+@RequestMapping("user")
 public class UserController {
 
 	@Autowired
 	private UserDAO dao;
+	
+	@RequestMapping("insert")
+	public void insertUser(UserVO bag) {
+		dao.insert(bag);
+	}
 
-	@RequestMapping("/listUser")
+	@RequestMapping("list")
 	public void User() {
 		List<UserVO> list = dao.list();
 		System.out.println(list);
-
 	}
 
-	@RequestMapping("deleteUser")
+	@RequestMapping("delete")
 	public void delete(String user_penname) {
 		dao.delete(user_penname);
 	}
@@ -36,13 +34,15 @@ public class UserController {
 	public void update(UserVO bag) {
 		dao.update(bag);
 	}
-
-	@RequestMapping("insert")
-	public void insertUser(UserVO bag) {
-		System.out.println("User»ðÀÔ : " + bag);
-		dao.insert(bag);
-		
+	
+	@RequestMapping("one")
+	public void one(String user_penname, Model model) {
+		UserVO bag = dao.one(user_penname);
+		model.addAttribute("bag", bag);
+		System.out.println(bag);
 	}
+
+	
 	
 
 }
