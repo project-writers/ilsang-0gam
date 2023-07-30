@@ -26,7 +26,7 @@
 <h3>회원수정 화면입니다. </h3>
 <hr color="red">
 <form action="user/update" method="get">
-	user_no : <input name="user_no" value="1"><br>
+	user_email : <input name="user_email" value="user_email"><br>
 	user_penname : <input name="user_penname" value="호호"><br>
 	<button type="submit">서버로 전송</button>
 </form>

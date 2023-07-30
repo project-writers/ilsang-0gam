@@ -3,7 +3,7 @@
 <mapper namespace="user">
 	
 	<insert id="insert" parameterType="userVO">
-		insert into user values (#{user_email}, #{user_penname}, now(), #{user_jwt}, null)
+		insert into user values (#{user_email}, #{user_penname}, now(), #{user_jwt})
 	</insert>
 
 	
@@ -12,7 +12,7 @@
 	</delete>
 	
 	<update id="up"  parameterType="userVO">
-		update user set user_penname = #{user_penname} where user_no = #{user_no}
+		update user set user_penname = #{user_penname} where user_email = #{user_email}
 	</update>
 	
 	<select id="one"  parameterType="String" resultType="userVO">
