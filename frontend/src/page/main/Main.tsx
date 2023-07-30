@@ -1,8 +1,8 @@
 import { NavBar } from '@/component/NavBar'
 import { Tag } from '@/component/Tag'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useQuery } from 'react-query'
 
 export function MainPage() {
     const card_dummy_list = [
@@ -52,37 +52,38 @@ export function MainPage() {
         keyword: string
     }
 
-    const [dummyList, setDummyList] = useState(card_dummy_list)
+    interface IPost {
+        userId: string
+        id: number
+        title: string
+        body: string
+    }
 
+    const location = useLocation()
+    const keyword = new URLSearchParams(location.search).get('keyword')
+
+    function getSearch(keyword: string | null) {
+        return fetch(
+            `https://jsonplaceholder.typicode.com/posts/${keyword}`
+        ).then((response) => response.json())
+    }
+
+    const { data, isLoading } = useQuery<IPost | undefined>([keyword], () =>
+        keyword ? getSearch(keyword) : undefined
+    )
     const navigate = useNavigate()
     const { register, handleSubmit, setFocus } = useForm<IForm>()
     const onValid = (data: IForm) => {
-        navigate(`/main?keyword=${data.keyword}`)
-
-        // 검색조건
-        const keyword = data.keyword.slice(1)
-        const searchedTag = card_dummy_list.filter((item) =>
-            item.tag.includes(keyword)
-        )
-        const searchedPenname = card_dummy_list.filter((item) =>
-            item.penname.includes(keyword)
-        )
-        const searchedTitle = card_dummy_list.filter((item) =>
-            item.title.includes(keyword)
-        )
-        if (data.keyword.startsWith('#')) {
-            setDummyList(searchedTag)
-        } else if (data.keyword.startsWith('@')) {
-            setDummyList(searchedPenname)
-        } else {
-            setDummyList(searchedTitle)
+        if (data.keyword === '') return
+        else {
+            navigate(`/main?keyword=${data.keyword}`)
         }
     }
 
     return (
         <div className="w-screen h-screen relative bg-[#F7F7F7]">
             <div className="pt-9 pl-6">{'로고영역'}</div>
-            <div className="w-full pt-9 px-6 flex flex-col">
+            <div className="w-full pt-9 px-6 flex flex-col bg-[#F7F7F7]">
                 <div className="font-bold text-2xl">{'일상공감'}</div>
                 <form
                     className="mt-3 flex items-center relative"
@@ -112,24 +113,34 @@ export function MainPage() {
                     </svg>
                 </form>
                 <Tag bgColor="#FFCE52" />
-                {dummyList.map((data) => (
-                    <Link
-                        to={`/watch/${data.ilsang_no}`}
-                        key={data.penname}
-                        className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
-                    >
-                        <div className="font-bold text-base">{data.title}</div>
-                        <div className="mt-4 text-xs line-clamp-5">
-                            {data.content}
-                        </div>
+                {keyword && data ? (
+                    isLoading ? (
+                        'Loading...'
+                    ) : (
+                        <div>{data?.body}</div>
+                    )
+                ) : (
+                    card_dummy_list.map((data) => (
                         <Link
-                            to={`/mypage/${data.penname}`}
-                            className="absolute mt-1 right-5 text-xs"
+                            to={`/post/${data.ilsang_no}`}
+                            key={data.penname}
+                            className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
                         >
-                            {data.penname}님의 글
+                            <div className="font-bold text-base">
+                                {data.title}
+                            </div>
+                            <div className="mt-4 text-xs line-clamp-5">
+                                {data.content}
+                            </div>
+                            <Link
+                                to={`/mypage/${data.penname}`}
+                                className="absolute mt-1 right-5 text-xs"
+                            >
+                                {data.penname}님의 글
+                            </Link>
                         </Link>
-                    </Link>
-                ))}
+                    ))
+                )}
             </div>
 
             {/* footer */}
