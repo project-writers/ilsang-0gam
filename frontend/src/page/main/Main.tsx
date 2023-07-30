@@ -112,7 +112,7 @@ export function MainPage() {
                         />
                     </svg>
                 </form>
-                <Tag bgColor="#FFCE52" />
+                <Tag />
                 {keyword && data ? (
                     isLoading ? (
                         'Loading...'

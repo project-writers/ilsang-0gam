@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export function Tag({ bgColor }: { bgColor: string }) {
+export function Tag() {
     const containerRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         const container = containerRef.current
@@ -32,7 +32,7 @@ export function Tag({ bgColor }: { bgColor: string }) {
             className="mt-4 overflow-auto whitespace-nowrap scrollbar-hide"
         >
             <button
-                className={`mr-2 px-4 py-2 border rounded-full bg-[${bgColor}]`}
+                className={`mr-2 px-4 py-2 border rounded-full bg-[#FFCE52]`}
             >
                 #자전거
             </button>
