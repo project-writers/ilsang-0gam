@@ -13,7 +13,6 @@
 
 글작성
 <form action="insertBbs" id="form" method="post" >
-  회원번호 : <input  id="ilsang_no" name="ilsang_no" value="회원번호"><br>
   제목 : <input type="text" id="ilsang_title" name="ilsang_title" value="제목"><br>
   태그 : <input type="text" id="ilsang_tag" name="ilsang_tag" value="태그"><br>
   내용 : <input type="text" id="ilsang_content" name="ilsang_content" value="내용"><br>

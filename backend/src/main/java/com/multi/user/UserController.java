@@ -15,8 +15,9 @@ public class UserController {
 	private UserDAO dao;
 	
 	@RequestMapping("insert")
-	public void insertUser(UserVO bag) {
+	public int insertUser(UserVO bag) {
 		dao.insert(bag);
+		return 1;
 	}
 
 	@RequestMapping("list")

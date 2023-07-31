@@ -13,11 +13,12 @@ public class IlsangController {
 
 	@Autowired
 	IlsangDAO dao;
-
+	
 	@RequestMapping("insertBbs")
-	public void insert(IlsangVO bag) {
+	public int insert(IlsangVO bag) {
 		System.out.println("controller : " + bag);
 		dao.insert(bag);
+		return 1;
 	}
 
 	@RequestMapping("deleteBbs")
