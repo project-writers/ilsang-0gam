@@ -105,7 +105,8 @@ public class IlsangEntity {
 	public void setIlsang_content(String ilsang_content) {
 		this.ilsang_content = ilsang_content;
 	}
-
+	
+	// 삽입 구현
 	public static IlsangEntity toSaveEntity(IlsangDTO ilsangDTO) {
 		IlsangEntity ilsangEntity = new IlsangEntity();
 		ilsangEntity.setIlsang_penname(ilsangDTO.getIlsang_penname());
@@ -115,4 +116,17 @@ public class IlsangEntity {
 		ilsangEntity.setIlsang_content(ilsangDTO.getIlsang_content());
 		return ilsangEntity;
 	}
+	
+	// 수정
+	public static IlsangEntity toUpdateEntity(IlsangDTO ilsangDTO) {
+		IlsangEntity ilsangEntity = new IlsangEntity();
+		ilsangEntity.setIlsang_no(ilsangDTO.getIlsang_no());
+		ilsangEntity.setIlsang_title(ilsangDTO.getIlsang_title());
+		ilsangEntity.setIlsang_tag(ilsangDTO.getIlsang_tag());
+		ilsangEntity.setIlsang_date(ilsangDTO.getIlsang_date());
+		ilsangEntity.setIlsang_content(ilsangDTO.getIlsang_content());
+		ilsangEntity.setIlsang_penname(ilsangDTO.getIlsang_penname());
+		return ilsangEntity;
+	}
+
 }
