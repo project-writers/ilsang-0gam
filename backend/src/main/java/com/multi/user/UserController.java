@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller //스프링에서 제어하는 역활로 등록
 public class UserController {
 	
+<<<<<<< HEAD
 	@Autowired
 	UserDAO dao;
 	
@@ -25,6 +26,12 @@ public class UserController {
 		System.out.println(dao);
 		dao.insert(bag);
 		
+=======
+	@RequestMapping("insert")
+	public int insertUser(UserVO bag) {
+		dao.insert(bag);
+		return 1;
+>>>>>>> parent of 00795db (feat : return 1; 삭제)
 	}
 	
 	@RequestMapping("update")
