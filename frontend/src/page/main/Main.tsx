@@ -124,7 +124,7 @@ export function MainPage() {
                         <Link
                             to={`/post/${data.ilsang_no}`}
                             key={data.penname}
-                            className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white"
+                            className="relative mt-4 px-5 py-5 h-44 border rounded-[20px] bg-white last:mb-20"
                         >
                             <div className="font-bold text-base">
                                 {data.title}
