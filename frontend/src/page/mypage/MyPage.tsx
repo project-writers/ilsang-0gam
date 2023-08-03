@@ -1,5 +1,5 @@
 import { Header } from '@/component/Header'
-import { useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Footer } from './Footer.tsx'
 
 // function findContainer(el: HTMLElement) {
