@@ -17,12 +17,13 @@ public class IlsangService {
 	public IlsangService(IlsangRepository ilsangRepository) {
 		this.ilsangRepository = ilsangRepository;
 	}
-
+	
+	// 삽입구현
 	public void save(IlsangDTO ilsangDTO) {
 		IlsangEntity ilsangEntity = IlsangEntity.toSaveEntity(ilsangDTO);
 		ilsangRepository.save(ilsangEntity);
 	}
-
+	//전체 조회
 	public List<IlsangDTO> findAll() {
 		List<IlsangEntity> ilsangEntityList = ilsangRepository.findAll();
 		List<IlsangDTO> ilsangDTOList = new ArrayList<>();

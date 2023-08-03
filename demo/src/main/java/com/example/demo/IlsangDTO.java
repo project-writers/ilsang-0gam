@@ -57,7 +57,13 @@ public class IlsangDTO {
 	public void setIlsang_content(String ilsang_content) {
 		this.ilsang_content = ilsang_content;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "IlsangDTO [ilsang_no=" + ilsang_no + ", ilsang_penname=" + ilsang_penname + ", ilsang_title="
+				+ ilsang_title + ", ilsang_tag=" + ilsang_tag + ", ilsang_date=" + ilsang_date + ", ilsang_content="
+				+ ilsang_content + "]";
+	}
 	//SELECT(findAll)
 	public static IlsangDTO toIlsangDTO(IlsangEntity ilsangEntity) {
 		IlsangDTO ilsangDTO = new IlsangDTO();
