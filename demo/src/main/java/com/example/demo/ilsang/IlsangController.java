@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.ilsang;
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/ilsang")
-@RequiredArgsConstructor
 public class IlsangController {
 	private final IlsangService ilsangService;
 	
@@ -26,30 +25,34 @@ public class IlsangController {
 	
 	//삽입구현
 	@PostMapping("/insert")
-	public void save(@RequestBody IlsangDTO ilsangDTO) {
+	public String save(@RequestBody IlsangDTO ilsangDTO) {
 		System.out.println("ilsangDTO");
 		ilsangService.save(ilsangDTO);
+		return "ilsang_insert구현";
 	}
 	
 	//전체 조회
 	@GetMapping("/select")
-	public void findAll() {
+	public String findAll() {
 		List<IlsangDTO> ilsangDTOList = ilsangService.findAll();
 		System.out.println("ilsangDTOList="+ ilsangDTOList);
+		return "ilsang_select구현";
 	}
 	
 	// 삭제 구현
 	//http://localhost:8080/ilsang/delete/1
 	@GetMapping("/delete")
-	public void delete(@RequestParam Long ilsang_no) {
+	public String delete(@RequestParam Long ilsang_no) {
 	    ilsangService.delete(ilsang_no);
 	    System.out.println("delete 실행");
+	    return "ilsang_delete구현";
 	}
 	
 	@PostMapping("/update")
-    public void updateForm(@RequestBody IlsangDTO ilsangDTO) {
+    public String updateForm(@RequestBody IlsangDTO ilsangDTO) {
         ilsangService.update(ilsangDTO);
         System.out.println("id실행");
-    }
+        return "ilsang_update";
+	}
 	
 }

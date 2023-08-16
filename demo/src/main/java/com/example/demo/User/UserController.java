@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.IlsangDTO;
-import com.example.demo.IlsangService;
+import com.example.demo.ilsang.IlsangDTO;
+import com.example.demo.ilsang.IlsangService;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/User")
-@RequiredArgsConstructor
 public class UserController {
 	private final UserService userService;
 
@@ -26,23 +25,26 @@ public class UserController {
 
 	// 전체 조회
 	@GetMapping("/select")
-	public void findAll() {
+	public String findAll() {
 		List<UserDTO> userDTOList = userService.findAll();
 		System.out.println("userDTOList=" + userDTOList);
+		return "User_select실행";
 	}
 
 	// 삽입구현
 	@PostMapping("/insert")
-	public void save(@RequestBody UserDTO userDTO) {
+	public String save(@RequestBody UserDTO userDTO) {
 		System.out.println("userDTO");
 		userService.save(userDTO);
+		return "User_insert실행";
 	}
 	
 	// 삭제 구현
 	@GetMapping("/delete")
-	public void delete(@RequestParam String user_penname) {
+	public String delete(@RequestParam String user_penname) {
 	    userService.delete(user_penname);
 	    System.out.println("delete 실행");
+	    return "User_delete구현";
 	}
 	
 	@PostMapping("/update")
