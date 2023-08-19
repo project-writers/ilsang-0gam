@@ -6,15 +6,14 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.IlsangDTO;
-import com.example.demo.IlsangEntity;
-import com.example.demo.IlsangRepository;
+import com.example.demo.ilsang.IlsangDTO;
+import com.example.demo.ilsang.IlsangEntity;
+import com.example.demo.ilsang.IlsangRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
 	private final UserRepository userRepository;
 

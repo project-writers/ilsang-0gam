@@ -2,8 +2,8 @@ package com.example.demo.User;
 
 import java.util.Date;
 
-import com.example.demo.IlsangDTO;
-import com.example.demo.IlsangEntity;
+import com.example.demo.ilsang.IlsangDTO;
+import com.example.demo.ilsang.IlsangEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

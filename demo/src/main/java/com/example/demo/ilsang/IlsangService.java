@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.ilsang;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class IlsangService {
 	private final IlsangRepository ilsangRepository;
 
